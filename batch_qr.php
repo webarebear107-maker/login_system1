@@ -2,11 +2,6 @@
 require 'config.php';
 include 'phpqrcode/qrlib.php';
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
 // CREATE QR FOLDER
 $qrPath = "qrcodes/batch/";
 if (!file_exists($qrPath)) {
@@ -39,6 +34,7 @@ $zip->open($zipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE);
 <meta charset="UTF-8">
 <title>Batch QR Codes</title>
 <link rel="stylesheet" href="css/main.css">
+<link rel="icon" type="image/png" href="images/ocshs3.png">
 </head>
 <body>
 

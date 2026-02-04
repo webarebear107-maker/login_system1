@@ -34,6 +34,7 @@ $schoolDates = array_merge(array_fill(0, $blankCols, ''), $schoolDates);
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="images/ID.jpg">
 <title>SF2-SHS Daily Attendance Report</title>
 
 <style>

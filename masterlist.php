@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OCSHS Masterlist</title>
 <link rel="stylesheet" href="css/main.css">
-<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="icon" type="image/png" href="images/ocshs3.png">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>

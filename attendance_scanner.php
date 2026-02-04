@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>QR Attendance Scanner</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="icon" type="image/png" href="images/ocshs3.png">
 
     <!-- Bootstrap -->
     <link rel="stylesheet"

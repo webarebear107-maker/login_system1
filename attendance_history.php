@@ -31,7 +31,7 @@ $result = mysqli_query($conn, $sql);
 <meta charset="UTF-8">
 <title>Previous Attendance</title>
 <link rel="stylesheet" href="css/main.css">
-<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="icon" type="image/png" href="images/ocshs3.png">
 </head>
 
 <body>
