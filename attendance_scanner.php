@@ -38,8 +38,8 @@ if (!isset($_SESSION['user_id'])) {
 
     <div class="nav">
         <a href="dashboard.php">Dashboard</a>
-        <a href="masterlist.php" class="active">Master List</a>
-        <a href="attendance_scanner.php">Attendance</a>
+        <a href="masterlist.php">Master List</a>
+        <a href="attendance_scanner.php" class="active">Attendance</a>
         <a href="attendance_history.php">Previous Attendance</a>
         <a href="archive_masterlist.php">Archive Masterlist</a>
         <a href="logout.php" class="logout">Logout</a>
