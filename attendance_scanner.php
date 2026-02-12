@@ -122,28 +122,29 @@ if (!isset($_SESSION['user_id'])) {
 <script>
 const html5QrCode = new Html5Qrcode("reader");
 
-html5QrCode.start(
-    { facingMode: "environment" }, // back camera
-    {
-        fps: 30, // 🔥 VERY FAST scanning
-        qrbox: { width: 250, height: 250 }, // smaller box = more sensitive
-        aspectRatio: 1.0,
-        disableFlip: false
-    },
-    (decodedText) => {
-        // INSTANT scan
-        document.getElementById("qr_code").value = decodedText;
+Html5Qrcode.getCameras().then(devices => {
+    if (devices && devices.length) {
+        let cameraId = devices[0].id; // first available camera
 
-        html5QrCode.stop().then(() => {
-            document.getElementById("scanForm").submit();
-        });
-    },
-    () => {
-        // ignore scan errors for speed
+        html5QrCode.start(
+            cameraId,
+            {
+                fps: 30,
+                qrbox: { width: 250, height: 250 }
+            },
+            (decodedText) => {
+                document.getElementById("qr_code").value = decodedText;
+
+                html5QrCode.stop().then(() => {
+                    document.getElementById("scanForm").submit();
+                });
+            }
+        );
     }
-).catch(err => {
+}).catch(err => {
     alert("Camera error: " + err);
 });
+
 </script>
 
 
