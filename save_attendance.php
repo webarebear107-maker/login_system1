@@ -18,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             lastname,
             mi,
             section,
-            gradelvl
+            gradelvl,
+            contact
         FROM masterlist
         WHERE generated_code = ?
     ");
@@ -57,15 +58,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     /* INSERT ATTENDANCE */
     $insert = $conn->prepare("
         INSERT INTO attendance
-        (lrn, fullname, section, gradelvl, date_logged, time_logged)
-        VALUES (?, ?, ?, ?, CURDATE(), CURTIME())
+        (lrn, fullname, section, gradelvl, contact, date_logged, time_logged)
+        VALUES (?, ?, ?, ?, ?, CURDATE(), CURTIME())
     ");
     $insert->bind_param(
-        "ssss",
+        "sssss",
         $student['lrn'],
         $fullname,
         $student['section'],
-        $student['gradelvl']
+        $student['gradelvl'],
+        $student['contact']
     );
 
     $insert->execute();

@@ -116,7 +116,7 @@ $archived = mysqli_query(
                 <tbody>
 
                 <?php
-                $qry = "SELECT * FROM masterlist ORDER BY gender DESC, lastname ASC, section ASC";
+                $qry = "SELECT * FROM archive_masterlist ORDER BY gender DESC, lastname ASC, section ASC";
                 $result = mysqli_query($conn, $qry);
 
                 while ($row = mysqli_fetch_assoc($result)) {

@@ -40,7 +40,7 @@ foreach ($rows as $index => $row) {
     if (mysqli_num_rows($check) > 0) continue;
 
     // Generate QR Code value
-    $generated_code = "STU-$lrn-" . strtoupper(substr(md5(uniqid()), 0, 6));
+    $generated_code = "$lrn";
 
     // Insert into database
     $sql = "INSERT INTO masterlist

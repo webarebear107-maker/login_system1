@@ -93,11 +93,12 @@ if (!isset($_SESSION['user_id'])) {
                         $today = date('Y-m-d');
                         $query = "SELECT * FROM attendance WHERE date_logged = '$today' ORDER BY time_logged DESC";
                         $res = mysqli_query($conn, $query);
-                        $i = 1;
+                        $total = mysqli_num_rows($res);
+                        $i = $total;
                         while ($row = mysqli_fetch_assoc($res)):
                         ?>
                             <tr>
-                                <td><?= $i++ ?></td>
+                                <td style="text-align: center;"><?= $i-- ?></td>
                                 <td><?= htmlspecialchars($row['lrn']) ?></td>
                                 <td><?= htmlspecialchars($row['fullname']) ?></td>
                                 <td><?= htmlspecialchars($row['section']) ?></td>
@@ -130,7 +131,7 @@ Html5Qrcode.getCameras().then(devices => {
             cameraId,
             {
                 fps: 30,
-                qrbox: { width: 250, height: 250 }
+                qrbox: { width: 300, height: 300 }
             },
             (decodedText) => {
                 document.getElementById("qr_code").value = decodedText;

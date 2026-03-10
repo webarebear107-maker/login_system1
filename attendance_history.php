@@ -74,52 +74,35 @@ $result = mysqli_query($conn, $sql);
             <table class="styled-table blue-table" id="masterTable">
                 <thead>
                     <tr>    
+                        <th>#</th>
                         <th>LRN</th>
-                        <th>First</th>
-                        <th>MI</th>
-                        <th>Last</th>
-                        <th>Gender</th>
-                        <th>Birthdate</th>
-                        <th>Strand</th>
+                        <th>Full Name</th>
                         <th>Section</th>
                         <th>Grade</th>
-                        <th>Address</th>
-                        <th>Contact</th>
-                        <th>Actions</th>
+                        <th>Date</th>
+                        <th>Time</th>
                     </tr>
                 </thead>
                 <tbody>
 
                 <?php
-                $qry = "SELECT * FROM masterlist ORDER BY gender DESC, lastname ASC, section ASC";
-                $result = mysqli_query($conn, $qry);
-
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $fullname = $row['firstname'] . " " . $row['mi'] . ". " . $row['lastname'];
-                ?>
-                    <tr>
-                        <td><?= htmlspecialchars($row['lrn']) ?></td>
-                        <td><?= htmlspecialchars($row['firstname']) ?></td>
-                        <td><?= htmlspecialchars($row['mi']) ?></td>
-                        <td><?= htmlspecialchars($row['lastname']) ?></td>
-                        <td><?= htmlspecialchars($row['gender']) ?></td>
-                        <td><?= htmlspecialchars($row['bdate']) ?></td>
-                        <td><?= htmlspecialchars($row['strand']) ?></td>
-                        <td><?= htmlspecialchars($row['section']) ?></td>
-                        <td><?= htmlspecialchars($row['gradelvl']) ?></td>
-                        <td class="truncate"><?= htmlspecialchars($row['address']) ?></td>
-                        <td><?= htmlspecialchars($row['contact']) ?></td>
-                        <td class="actions">
-                            <a href="addinfo.php?id=<?= $row['id'] ?>" class="btn-sm view">View</a>
-                            <a href="editinfo.php?id=<?= $row['id'] ?>" class="btn-sm edit">Edit</a>
-                            <a href="deleteinfo.php?id=<?= $row['id'] ?>"
-                               class="btn-sm delete"
-                               onclick="return confirm('Delete this record?');">
-                               Delete
-                            </a>
-                        </td>
-                    </tr>
-                <?php } ?>
+                        $today = date('Y-m-d');
+                        $query = "SELECT * FROM attendance WHERE date_logged = '$today' ORDER BY time_logged DESC";
+                        $res = mysqli_query($conn, $query);
+                        $total = mysqli_num_rows($res);
+                        $i = $total;
+                        while ($row = mysqli_fetch_assoc($res)):
+                        ?>
+                            <tr>
+                                <td style="text-align: center;"><?= $i-- ?></td>
+                                <td><?= htmlspecialchars($row['lrn']) ?></td>
+                                <td><?= htmlspecialchars($row['fullname']) ?></td>
+                                <td><?= htmlspecialchars($row['section']) ?></td>
+                                <td><?= htmlspecialchars($row['gradelvl']) ?></td>
+                                <td><?= htmlspecialchars($row['date_logged']) ?></td>
+                                <td><?= date("h:i A", strtotime($row['time_logged'])) ?></td>
+                            </tr>
+                        <?php endwhile; ?>
 
                 </tbody>
             </table>
