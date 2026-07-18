@@ -101,5 +101,16 @@ $latestRow = mysqli_fetch_assoc($latestQuery);
 
 </div>
 
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-left">
+        <p><strong>Produced by:</strong> Gian M. Lalap</p>
+        <p><strong>Collaborator:</strong> Jusper James L. Villanueva & Roey C. Jaballa</p>
+    </div>
+    <div class="footer-right">
+        <p>&copy; <?= date("Y") ?> OCSHS. All rights reserved.</p>
+    </div>
+</div>
+
 </body>
 </html>

@@ -388,3 +388,22 @@ body::before {
     padding: 4px;
 }
 
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #0066cc, #004080); /* opposite direction of header */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 203px;
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 3px 0;
+}
+
