@@ -17,9 +17,14 @@ After downloading the Xampp you will...
 
 You will now turn on your xampp and go to a browser. 
 
-1. Create a new database and name it 
+1. Create a new database and name it 'login_system'
 
+2. Then go to import, choose file, go to login_system1-project, then select the (SQL Source File), then import.
 
+3. And finally, you can now go to https://localhost/login_system
 
-7. Now go to your login_system1-project, and find the login_system.sql/login_system (SQL Source File).
+4. The admin key is
+Username: 14785
+Password: 123456
 
+5. You are now good to go.... 
