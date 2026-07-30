@@ -1,0 +1,25 @@
+To access this project your must...
+
+1. Download Xampp/MySQL.
+
+After downloading the Xampp you will...
+
+2. Download the Zip file of this https://github.com/webarebear107-maker/login_system1/tree/project.
+
+3. Then you will navigate on your Download files and their you will see a "login_system1-project".
+
+4. Right click the downloaded zip file then extract all, click browse and navigate to you xampp/htdocs
+
+5. Select folder the extract.
+
+6. You can now delete the zipped files because it's no longer useful.
+
+
+You will now turn on your xampp and go to a browser. 
+
+1. 
+
+
+
+7. Now go to your login_system1-project, and find the login_system.sql/login_system (SQL Source File).
+
