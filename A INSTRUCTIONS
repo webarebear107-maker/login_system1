@@ -17,7 +17,7 @@ After downloading the Xampp you will...
 
 You will now turn on your xampp and go to a browser. 
 
-1. Create a new database and name it 'login_system'
+1. Go to https://localhost/phpmyadmin/index.php (make sure that your xampp is on)
 
 2. Then go to import, choose file, go to login_system1-project, then select the (SQL Source File), then import.
 
